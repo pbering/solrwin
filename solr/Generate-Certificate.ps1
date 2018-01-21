@@ -1,5 +1,5 @@
 # generate
-$cert = New-SelfSignedCertificate -FriendlyName "solr" -DnsName "solr" -CertStoreLocation 'cert:\LocalMachine' -NotAfter (Get-Date).AddYears(1)
+$cert = New-SelfSignedCertificate -FriendlyName "solr" -DnsName "solr" -CertStoreLocation 'cert:\LocalMachine' -NotAfter (Get-Date).AddYears(5)
 
 # trust
 $store = New-Object System.Security.Cryptography.X509Certificates.X509Store "Root", "LocalMachine"

@@ -3,16 +3,16 @@ version: '2.3'
 services:
 
   solr-server:
-    image: solr
+    image: solr-win
     build:
       context: .\solr
     hostname: solr
     ports:
       - "8983:8983"
     environment:
-      SOLR_HOME: c:/solrhome
+      SOLR_HOME: g:/solrhome
     volumes:
-      - ./data/solrhome:c:/solrhome
+      - ./data:c:/data
 
 networks:
   default:

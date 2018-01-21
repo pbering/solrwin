@@ -2,3 +2,5 @@ solr/certs/
 data/solrhome/
 !data/solrhome/configsets
 !data/solrhome/solr.xml
+!data/solrhome/zoo.cfg
+!data/solrhome/README.txt

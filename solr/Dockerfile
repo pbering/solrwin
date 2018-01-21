@@ -1,5 +1,5 @@
 # escape=\
-FROM openjdk:9.0.1-jdk-windowsservercore-1709
+FROM openjdk:8u151-jdk-windowsservercore-1709
 
 SHELL ["powershell", "-NoProfile", "-Command", "$ErrorActionPreference = 'Stop';"]
 
@@ -14,6 +14,10 @@ ENV SOLR_SSL_TRUST_STORE_PASSWORD=secret
 RUN Invoke-WebRequest -Method Get -Uri ('http://archive.apache.org/dist/lucene/solr/{0}/solr-{0}.zip' -f $env:SERVER_VERSION) -OutFile /solr.zip; \
     Expand-Archive -Path /solr.zip -DestinationPath /solr; \
     Remove-Item /solr.zip -Force;
+
+VOLUME c:/data
+
+RUN Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices' -Name 'G:' -Value '\??\C:\data' -Type String
 
 WORKDIR ${SERVER_ROOT}
 
