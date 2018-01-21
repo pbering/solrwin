@@ -1,0 +1,20 @@
+version: '2.3'
+
+services:
+
+  solr-server:
+    image: solr
+    build:
+      context: .\solr
+    hostname: solr
+    ports:
+      - "8983:8983"
+    environment:
+      SOLR_HOME: c:/solrhome
+    volumes:
+      - ./data/solrhome:c:/solrhome
+
+networks:
+  default:
+    external:
+      name: nat

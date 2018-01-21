@@ -1,0 +1,4 @@
+solr/certs/
+data/solrhome/
+!data/solrhome/configsets
+!data/solrhome/solr.xml
