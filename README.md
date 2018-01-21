@@ -1,1 +1,3 @@
-# Docker image for Solr on nanoserver with SSL
+# Docker image for Solr on nano server with SSL
+
+...

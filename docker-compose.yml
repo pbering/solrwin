@@ -2,8 +2,8 @@ version: '2.3'
 
 services:
 
-  solr-server:
-    image: solr-win
+  solrwin:
+    image: solrwin:6.6.2
     build:
       context: .\solr
     hostname: solr
