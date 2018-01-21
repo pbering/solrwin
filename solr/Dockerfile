@@ -1,5 +1,5 @@
 # escape=\
-FROM openjdk:9.0.1-jdk-windowsservercore-1709 as builder
+FROM openjdk:9.0.1-jdk-windowsservercore-1709
 
 SHELL ["powershell", "-NoProfile", "-Command", "$ErrorActionPreference = 'Stop';"]
 
