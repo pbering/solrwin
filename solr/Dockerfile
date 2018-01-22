@@ -31,6 +31,9 @@ VOLUME c:/data
 
 RUN REG ADD 'HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices' /v 'G:' /d '\??\C:\data' /reg:64
 
+# set solr home dir
+ENV SOLR_HOME=g:/
+
 # expose default port
 EXPOSE 8983
 
