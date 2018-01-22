@@ -26,7 +26,7 @@ ENV SOLR_SSL_KEY_STORE_PASSWORD=secret
 ENV SOLR_SSL_TRUST_STORE=c:/solr/server/etc/solr-ssl.keystore.pfx
 ENV SOLR_SSL_TRUST_STORE_PASSWORD=secret
 
-# workaround for java issues with Windows symlinks: https://github.com/moby/moby/issues/27537#issuecomment-271546031
+# workaround for java issues with Windows container symlinks: https://github.com/moby/moby/issues/27537#issuecomment-271546031
 VOLUME c:/data
 
 RUN REG ADD 'HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices' /v 'G:' /d '\??\C:\data' /reg:64
