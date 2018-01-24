@@ -7,6 +7,8 @@ $store.Open("ReadWrite")
 $store.Add($cert)
 $store.Close()
 
+New-Item -Path (Join-Path $PSScriptRoot "\certs") -ItemType Directory -ErrorAction SilentlyContinue | Out-Null
+
 # export
 $cert | Export-PfxCertificate -FilePath (Join-Path $PSScriptRoot "\certs\solr-ssl.keystore.pfx") -Password (ConvertTo-SecureString -String "secret" -Force -AsPlainText) -Force | Out-Null
 
