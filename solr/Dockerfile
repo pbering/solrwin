@@ -16,6 +16,7 @@ FROM openjdk:8u151-jdk-nanoserver
 
 # copy output from builder image
 COPY --from=builder /solr /solr
+COPY --from=builder /windows/system32/find.exe /windows/system32/
 
 # copy certificates into solr
 ADD ./certs c:/solr/server/etc
